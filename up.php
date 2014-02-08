@@ -2,7 +2,7 @@
 $target = "v/"; 
 $target = $target . basename( $_FILES['uploaded']['name']); 
 //print_r($_FILES['uploaded']);
-$randomstringP1 = base64_encode(md5(print_r($_SERVER,true).time()));
+$randomstringP1 = base64_encode(md5(print_r($_SERVER,true).time(),true));
 $randomstringP2 = preg_replace("/[^A-Za-z0-9 ]/", '', $randomstringP1);
 $randomstringP2 = substr($randomstringP2,0,5);
 if($_FILES['uploaded']['type'] == "video/mp4")
