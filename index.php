@@ -98,7 +98,7 @@ function BrowserType($UA)
       switch(true){
         case ($version<=8):
           //IE 8 or under!
-          echo("Does not support any HTML5 video.. TODO GIF FALLBACK");
+          return $Return;
           break;
 
         case ($version>=9):
