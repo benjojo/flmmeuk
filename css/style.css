@@ -1,0 +1,20 @@
+body
+{
+	background:#caccc9;
+	font-family:'Open Sans', sans-serif;
+}
+#uploadContainer
+{
+	text-align:center;
+	color:rgb(94, 94, 94);
+}
+h2
+{
+	font-weight:700;
+	font-size:40pt;
+}
+textarea
+{
+	width:300px;
+	height:70px;
+}
