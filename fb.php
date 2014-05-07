@@ -95,7 +95,7 @@ function BrowserType($UA)
     }
     else if (preg_match("/safari/",strtolower($UA)))
     {
-    $Return['ext'] = ".no";
+        $Return['ext'] = ".no";
         return $Return; // We want MP4 anyway.
     }
     
