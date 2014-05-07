@@ -1,4 +1,5 @@
 <?php
+$DATADIR = "/var/www/DataStore/videohosting/v";
 $target = "v/"; 
 $target = $target . basename( $_FILES['uploaded']['name']); 
 //print_r($_FILES['uploaded']);
@@ -10,9 +11,9 @@ if($_FILES['uploaded']['type'] == "video/mp4")
     if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
     {
         rename($target,"v/".$randomstringP2."_t.mp4");
-        shell_exec("/usr/bin/ffmpeg -i /var/www/DataStore/videohosting/v/".$randomstringP2. "_t.mp4 /var/www/DataStore/videohosting/v/".$randomstringP2.".webm");
-        shell_exec("/usr/bin/ffmpeg -i /var/www/DataStore/videohosting/v/".$randomstringP2. "_t.mp4 -b 1500k -vcodec h264 -vpre baseline -g 30 /var/www/DataStore/videohosting/v/".$randomstringP2.".mp4");
-        shell_exec("/usr/bin/ffmpeg -ss 00:00:00.000 -i /var/www/DataStore/videohosting/v/".$randomstringP2. ".mp4 -pix_fmt rgb24 -r 10 -s 320x240 /var/www/DataStore/videohosting/v/".$randomstringP2.".gif");
+        shell_exec("/usr/bin/ffmpeg -i $DATADIR/".$randomstringP2. "_t.mp4 $DATADIR/".$randomstringP2.".webm");
+        shell_exec("/usr/bin/ffmpeg -i $DATADIR/".$randomstringP2. "_t.mp4 -b 1500k -vcodec h264 -vpre baseline -g 30 $DATADIR/".$randomstringP2.".mp4");
+        shell_exec("/usr/bin/ffmpeg -ss 00:00:00.000 -i $DATADIR/".$randomstringP2. ".mp4 -pix_fmt rgb24 -r 10 -s 320x240 $DATADIR/".$randomstringP2.".gif");
     }
 }
 elseif($_FILES['uploaded']['type'] == "video/webm")
@@ -20,8 +21,8 @@ elseif($_FILES['uploaded']['type'] == "video/webm")
     if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
     {
         rename($target,"v/".$randomstringP2.".webm");
-        shell_exec("/usr/bin/ffmpeg -i /var/www/DataStore/videohosting/v/".$randomstringP2. ".webm -b 1500k -vcodec h264 -vpre baseline -g 30 /var/www/DataStore/videohosting/v/".$randomstringP2.".mp4");
-        shell_exec("/usr/bin/ffmpeg -ss 00:00:00.000 -i /var/www/DataStore/videohosting/v/".$randomstringP2. ".webm -pix_fmt rgb24 -r 10 -s 320x240 /var/www/DataStore/videohosting/v/".$randomstringP2.".gif");
+        shell_exec("/usr/bin/ffmpeg -i $DATADIR/".$randomstringP2. ".webm -b 1500k -vcodec h264 -vpre baseline -g 30 $DATADIR/".$randomstringP2.".mp4");
+        shell_exec("/usr/bin/ffmpeg -ss 00:00:00.000 -i $DATADIR/".$randomstringP2. ".webm -pix_fmt rgb24 -r 10 -s 320x240 $DATADIR/".$randomstringP2.".gif");
     }
 }
 else
@@ -29,9 +30,9 @@ else
     if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
     {
         rename($target,"v/".$randomstringP2.".dunno");
-        shell_exec("/usr/bin/ffmpeg -i /var/www/DataStore/videohosting/v/".$randomstringP2. ".dunno -b 1500k -vcodec h264 -vpre baseline -g 30 /var/www/DataStore/videohosting/v/".$randomstringP2.".mp4");
-        shell_exec("/usr/bin/ffmpeg -i /var/www/DataStore/videohosting/v/".$randomstringP2. ".dunno /var/www/DataStore/videohosting/v/".$randomstringP2.".webm");
-        shell_exec("/usr/bin/ffmpeg -ss 00:00:00.000 -i /var/www/DataStore/videohosting/v/".$randomstringP2. ".dunno -pix_fmt rgb24 -r 10 -s 320x240 /var/www/DataStore/videohosting/v/".$randomstringP2.".gif");
+        shell_exec("/usr/bin/ffmpeg -i $DATADIR/".$randomstringP2. ".dunno -b 1500k -vcodec h264 -vpre baseline -g 30 $DATADIR/".$randomstringP2.".mp4");
+        shell_exec("/usr/bin/ffmpeg -i $DATADIR/".$randomstringP2. ".dunno $DATADIR/".$randomstringP2.".webm");
+        shell_exec("/usr/bin/ffmpeg -ss 00:00:00.000 -i $DATADIR/".$randomstringP2. ".dunno -pix_fmt rgb24 -r 10 -s 320x240 $DATADIR/".$randomstringP2.".gif");
         unlink("v/" . $randomstringP2.".dunno");
     }
 }
