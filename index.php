@@ -92,22 +92,17 @@ function BrowserType($UA)
     // IE Detection.
     preg_match('/MSIE (.*?);/', $UA, $matches);
     if (count($matches)>1){
-      //Then we're using IE
-      $version = $matches[1];
 
-      switch(true){
-        case ($version<=8):
-          //IE 8 or under!
-          return $Return;
-          break;
+        //Then we're using IE
+        $version = $matches[1];
 
-        case ($version>=9):
-          return $Return;
-          break;
+        if ($version<=8) {
+            return $Return;
+        } else if ($version>=9) {
+            $Return['ext'] = ".no";
+            return $Return;
+        }
 
-        default:
-          //You get the idea
-      }
     }
     // So it is not IE.
     if (strpos($UA, 'Chrome') !== false)
