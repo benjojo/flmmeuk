@@ -62,5 +62,3 @@ file_put_contents("boop.txt", $randomstringP2 . "\n", FILE_APPEND);
 	</div>
 </body>
 </html>
-<?php
-die();
