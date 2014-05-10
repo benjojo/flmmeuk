@@ -48,6 +48,7 @@ else
     $VideoName = str_replace ( ".mp4" , "" ,$_GET['v'] );
     // We need to test if the video is really there.
     $Prams = BrowserType($_SERVER['HTTP_USER_AGENT']);
+    header("Content-Type: " . $Prams['mime']);
     
     if(substr($_GET['v'], strlen($_GET['v']) - 4) != ".mp4" && $Prams['mime'] == "video/mp4")    
     {  
@@ -55,7 +56,6 @@ else
         die();
     }
     
-    header("Content-Type: " . $Prams['mime']);
     if(DoesVideoExist($VideoName))
     {
         readfile("./v/" . $VideoName . $Prams['ext']);
@@ -64,7 +64,6 @@ else
     {
         readfile("./v/OTgzY" . $Prams['ext']);
     }
-    die();
 }
 
 
