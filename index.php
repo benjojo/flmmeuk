@@ -5,7 +5,7 @@ if(!isset($_GET['v']))
 <html>
 <head>
 	<title>flm.me.uk</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-fileupload.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
