@@ -40,7 +40,7 @@ file_put_contents("boop.txt", $randomstringP2 . "\n", FILE_APPEND);
 ?>
 <html>
 <head>
-	<title>flm.me.uk</title>
+	<title>flm.me.uk - Browser aware video tag hosting</title>
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-fileupload.min.css" rel="stylesheet">

@@ -4,7 +4,7 @@ if(!isset($_GET['v']))
 ?>
 <html>
 <head>
-<title>VIDEO TAG HOSTING WITH BROWSER COMPATIABILTY</title>
+<title>Browser aware video tag hosting</title>
 </head>
 <body>
 <h2>Upload Here</h2>
